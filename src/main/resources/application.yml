@@ -1,0 +1,36 @@
+# Spring properties
+spring:
+  application:
+     name: movie-service
+  freemarker:
+     enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  thymeleaf:
+      cache: false   # Service registers under this name
+    # Trailing / mandatory
+#  datasource:
+#      url: jdbc:mysql://localhost:3306/imdbmicroservice
+#      username: root
+#      password: 1
+#  data:
+#      rest:
+#        base-path: /api
+
+
+# Map the error path to error template (for Thymeleaf)
+# Map the error path to error template (for Thymeleaf)
+
+
+# HTTP Server
+server:
+  port: 2222   # HTTP (Tomcat) port
+
+
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:1111/eureka/
+#  instance:
+#    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+
+
