@@ -6,7 +6,7 @@
 </head>
 <body>
 <div th:each="s:${search}">
-    <a th:href="@{/movie/imdb/{id}(id=${s.imdbID})}" th:text="${s.Title}"></a>
+    <a th:href="@{/movies/detail/{id}(id=${s.imdbID})}" th:text="${s.Title}"></a>
 
 
 </div>

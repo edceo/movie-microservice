@@ -5,10 +5,7 @@ import com.edsoft.domain.Search;
 import com.edsoft.service.MovieService;
 import org.apache.commons.lang.math.NumberUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -46,6 +43,15 @@ public class MovieController {
             return new ModelAndView("error");
         }
         return new ModelAndView("search", "search", s.getEpisodes());
+    }
+
+    @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
+    public ModelAndView getMovieDetailById(@PathVariable("id") String id) {
+        Movie m = movieService.detailMovieByImdbId(id);
+        if (m.getImdbID().isEmpty()) {
+            return new ModelAndView("error");
+        }
+        return new ModelAndView("detail", "movie", m);
     }
 
 }
